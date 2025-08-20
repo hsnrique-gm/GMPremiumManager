@@ -7,6 +7,7 @@
 
 import Adapty
 import AdaptyUI
+import Foundation
 
 public typealias MappedProduct = AdaptyPaywallProduct
 public typealias PremiumManagerPaywall = [String: PremiumManagerModel]
@@ -14,7 +15,7 @@ public typealias PremiumManagerPaywall = [String: PremiumManagerModel]
 public struct PremiumManagerModel {
     public let paywall: AdaptyPaywall
     public let products: [AdaptyPaywallProduct]
-    public let rcConfig: [String: Any]?
+    public let rcConfig: Any?
     public let isPaywallBuilderEnabled: Bool
     public let configuration: AdaptyUI.PaywallConfiguration?
 }

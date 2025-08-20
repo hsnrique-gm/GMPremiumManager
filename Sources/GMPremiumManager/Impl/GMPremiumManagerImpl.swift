@@ -43,7 +43,7 @@ final public class GMPremiumManagerImpl: GMPremiumManager {
                 for placement in placements {
                     group.addTask {
                         if let paywall = try? await self.fetchPaywall(for: placement) {
-                            let rcConfig = paywall.remoteConfig as? [String: Any]
+                            let rcConfig = paywall.remoteConfig
                             let isPaywallBuilderEnabled = paywall.hasViewConfiguration
                             let products = try await Adapty.getPaywallProducts(paywall: paywall)
                             let configuration = isPaywallBuilderEnabled ? try? await self.fetchPaywallConfiguration(for: paywall) : nil
